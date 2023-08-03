@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <gradient android:angle="90"
+                android:endColor="#348bf8"
+                android:startColor="#420594"
+                android:type="linear"/>
+
+        </shape>
+    </item>
+    <item>
+        <bitmap android:gravity="center"
+            android:src="@drawable/finanzi_titulo" />
+    </item>
+
+</layer-list>

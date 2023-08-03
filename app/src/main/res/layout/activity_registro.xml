@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+
+        android:id="@+id/view"
+        android:layout_width="110dp"
+        android:layout_height="16dp"
+        android:background="#348BF8"
+        android:translationY="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:src="@drawable/finanzi_titulo_bien"
+        android:translationY="50dp"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        tools:ignore="MissingConstraints" />
+
+    <View
+
+        android:id="@+id/view2"
+        android:layout_width="110dp"
+        android:layout_height="16dp"
+        android:background="#420594"
+        android:translationY="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Crear cuenta"
+            android:textColor="#000000"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:translationY="100dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="65dp"
+            android:text="Nombre"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:textStyle="normal"
+            android:translationY="155dp" />
+
+        <EditText
+            android:id="@+id/txtnombre"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/lineas_de_texto"
+            android:drawableStart="@drawable/usuario"
+            android:drawablePadding="8dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:hint="Ingrese su nombre"
+            android:inputType="textPersonName"
+            android:paddingLeft="16dp"
+            android:textColor="#7a7a7a"
+            android:translationY="165dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="65dp"
+            android:text="Apellidos"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:translationY="245dp" />
+
+        <EditText
+            android:id="@+id/txtapellido"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/lineas_de_texto"
+            android:drawableStart="@drawable/usuario"
+            android:drawablePadding="8dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:hint="Ingrese su apellido"
+            android:inputType="textPersonName"
+            android:paddingLeft="16dp"
+            android:textColor="#7a7a7a"
+            android:translationY="255dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="65dp"
+            android:text="Correo"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:translationY="335dp" />
+
+        <EditText
+            android:id="@+id/EditcorreoR"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/lineas_de_texto"
+            android:drawableStart="@drawable/sobre_de_correo_electronico"
+            android:drawablePadding="8dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:hint="Ingrese su correo"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="16dp"
+            android:textColor="#7a7a7a"
+            android:translationY="345dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="65dp"
+            android:text="Contraseña"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:translationY="425dp" />
+
+        <EditText
+            android:id="@+id/EditcontraseñaR"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/lineas_de_texto"
+            android:drawableStart="@drawable/bloquear_3"
+            android:drawablePadding="8dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:hint="Ingrese su contraseña"
+            android:inputType="textPassword"
+            android:paddingLeft="16dp"
+            android:textColor="#7a7a7a"
+            android:translationY="435dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="65dp"
+            android:text="Verificar contraseña"
+            android:textColor="#000000"
+            android:textSize="15dp"
+            android:translationY="515dp" />
+
+        <EditText
+            android:id="@+id/EditCcontraseñaR"
+            android:layout_width="320dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/lineas_de_texto"
+            android:drawableStart="@drawable/bloquear_3"
+            android:drawablePadding="8dp"
+            android:elevation="20dp"
+            android:ems="10"
+            android:hint="Ingrese su contraseña"
+            android:inputType="textPassword"
+            android:paddingLeft="16dp"
+            android:textColor="#7a7a7a"
+            android:translationY="525dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="65dp">
+
+
+        <RadioButton
+            android:id="@+id/btnTerminos"
+            android:layout_width="300dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center_horizontal"
+            android:paddingStart="20dp"
+            android:text="Aceptar terminos y condiciones"
+            android:textColor="#348BF8"
+            android:textSize="15dp"
+            android:translationY="610dp"
+            android:buttonTint="@color/teal_200"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="25dp">
+
+        <Button
+            android:id="@+id/Btnregistrar"
+            android:layout_width="216dp"
+            android:layout_height="44dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/boton_registro"
+            android:text="Crear"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:translationY="655dp"
+            android:elevation="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="44dp">
+
+        <TextView
+            android:id="@+id/txtrespuestaR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="respuesta:"
+            android:textColor="#7a7a7a"
+            android:translationY="700dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

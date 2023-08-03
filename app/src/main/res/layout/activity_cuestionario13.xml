@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cuestionario13Activity">
+
+
+    <TextView
+        android:id="@+id/txtNroPregunta"
+        android:layout_width="65dp"
+        android:layout_height="0dp"
+        android:text="1/10"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="140dp"
+        android:text="Leer y Responder"
+        android:textColor="@color/black"
+        android:textSize="26dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/txtPregunta"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="30dp"
+        android:text="Para poder tener parrafos en las \npreguntas se debe de usar \nbacklash n para generar un \nsalto de linea"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="352dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtPregunta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPregunta">
+
+        <RadioButton
+            android:id="@+id/rdBtnOpc1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/opciones"
+            android:elevation="2dp"
+            android:text="Opcion 1 p1"
+            android:textSize="20dp"
+            android:buttonTint="@color/teal_200"/>
+
+        <RadioButton
+            android:id="@+id/rdBtnOpc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/opciones"
+            android:elevation="2dp"
+            android:text="Opcion 1 p1"
+            android:textSize="20dp"
+            android:buttonTint="@color/teal_200"/>
+
+        <RadioButton
+            android:id="@+id/rdBtnOpc3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/opciones"
+            android:elevation="2dp"
+            android:text="Opcion 1 p1"
+            android:textSize="20dp"
+            android:buttonTint="@color/teal_200"/>
+
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSiguiente"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="151dp"
+        android:layout_marginEnd="151dp"
+        android:background="@drawable/inicio_finanzi"
+        android:onClick="siguiente"
+        android:text="Comprobar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnfinalizar"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginEnd="152dp"
+        android:background="@drawable/inicio_finanzi"
+        android:onClick="siguiente"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Comprobar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSiguiente" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSalir"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/transparente"
+        android:drawableEnd="@drawable/cancelar"
+        android:onClick="Salir"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        tools:layout_editor_absoluteX="5dp" />
+
+    <ImageView
+        android:id="@+id/titulo"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/finanzi_titulo_bien"
+        android:elevation="21dp"
+        android:translationY="10dp"
+        android:translationX="25dp"/>
+
+    <ImageView
+        android:id="@+id/corazon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/corazon"
+        android:translationX="310dp"
+        android:translationY="20dp"
+        tools:ignore="MissingConstraints"
+        android:elevation="21dp"/>
+
+    <TextView
+        android:id="@+id/txtvidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:translationX="350dp"
+        android:translationY="20dp"
+        android:elevation="21dp"
+        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/moneda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/moneda"
+        android:translationX="240dp"
+        android:translationY="20dp"
+        tools:ignore="MissingConstraints"
+        android:elevation="21dp"/>
+
+    <TextView
+        android:id="@+id/txtmonedas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:translationX="280dp"
+        android:translationY="20dp"
+        android:elevation="21dp"
+        tools:ignore="MissingConstraints" />
+
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="#f2f2f2"
+        android:elevation="20dp"
+        android:translationZ="-1dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

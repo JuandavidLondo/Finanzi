@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="470dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/tienda_view_fondo"
+            android:elevation="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tu Perfil"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:translationY="-460dp"
+            android:elevation="20dp"/>
+
+        <ImageButton
+            android:id="@+id/btnCerrarsesion"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/cerrar_sesion"
+            android:layout_gravity="center"
+            android:translationY="-490dp"
+            android:translationX="150dp"
+            android:elevation="20dp"
+            android:background="@android:color/transparent"/>
+        <ImageView
+            android:id="@+id/profilephoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/usuario1"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:translationY="-490dp"
+            android:elevation="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:elevation="20dp"
+            android:translationY="-460dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="46dp"
+                android:text="Nombre: "
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/NombreUsu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:elevation="20dp"
+            android:translationY="-445dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="46dp"
+                android:text="Apellidos: "
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ApellidosUsu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:elevation="20dp"
+            android:orientation="horizontal"
+            android:translationY="-430dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="46dp"
+                android:text="Correo: "
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/CorreoUsu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btnedit"
+            android:layout_width="216dp"
+            android:layout_height="44dp"
+            android:text="Editar"
+            android:background="@drawable/inicio_finanzi"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="21dp"
+            android:layout_gravity="center_horizontal"
+            android:translationY="-425dp"
+            android:stateListAnimator="@null"/>
+        <Button
+            android:id="@+id/btneliminar"
+            android:layout_width="216dp"
+            android:layout_height="44dp"
+            android:text="Eliminar"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/inicio_finanzi"
+            android:textSize="20dp"
+            android:elevation="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_gravity="center_horizontal"
+            android:translationY="-425dp"
+            android:stateListAnimator="@null"/>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

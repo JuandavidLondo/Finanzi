@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".TiendaFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/tienda_view_fondo"
+            android:elevation="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moneditas"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:translationY="-190dp"
+            android:textStyle="bold"
+            android:elevation="21dp"/>
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/moneda_grande"
+            android:layout_margin="10dp"
+            android:translationY="-190dp"
+            android:translationX="-120dp"
+            android:elevation="20dp"/>
+
+        <TextView
+            android:layout_width="204dp"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            android:justificationMode="inter_word"
+            android:text="Son un bien recibido dentro de la aplicacion en base a tus logros o anuncios que visualizes, se usan para comprar vidas!"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:translationX="50dp"
+            android:translationY="-280dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="370dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/tienda_view_fondo"
+            android:translationY="-235dp"
+            android:elevation="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Tienda"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:translationY="-615dp"
+            android:elevation="21dp"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/corazon"
+            android:translationY="-595dp"
+            android:translationX="-120dp"
+            android:elevation="22dp"/>
+        <View
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/fondo_tienda"
+            android:translationY="-650dp"
+            android:translationX="-120dp"
+            android:elevation="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="Una vida"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:translationY="-690dp"
+            android:translationX="-35dp"
+            android:elevation="21dp"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/moneda"
+            android:translationY="-740dp"
+            android:translationX="100dp"
+            android:elevation="21dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="X5"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:translationY="-765dp"
+            android:translationX="135dp"
+            android:elevation="21dp"/>
+        <Button
+            android:id="@+id/Comprar1"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:background="@drawable/inicio_finanzi"
+            android:translationY="-760dp"
+            android:text="Comprar"
+            android:textAllCaps="false"
+            android:textColor="#f2f2f2"
+            android:textSize="20dp"
+            android:elevation="20dp"
+            android:stateListAnimator="@null"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/corazon"
+            android:translationY="-745dp"
+            android:translationX="-120dp"
+            android:elevation="22dp"/>
+        <View
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/fondo_tienda"
+            android:translationY="-800dp"
+            android:translationX="-120dp"
+            android:elevation="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:elevation="21dp"
+            android:text="Todas las Vidas"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:translationX="-9dp"
+            android:translationY="-840dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/moneda"
+            android:translationY="-890dp"
+            android:translationX="100dp"
+            android:elevation="21dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:text="X12"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:translationY="-915dp"
+            android:translationX="135dp"
+            android:elevation="21dp"/>
+        <Button
+            android:id="@+id/Comprar2"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:background="@drawable/inicio_finanzi"
+            android:translationY="-910dp"
+            android:text="Comprar"
+            android:textAllCaps="false"
+            android:textColor="#f2f2f2"
+            android:textSize="20dp"
+            android:elevation="20dp"
+            android:stateListAnimator="@null"/>
+
+    </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

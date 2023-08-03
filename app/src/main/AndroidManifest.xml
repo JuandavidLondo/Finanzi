@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Finanzi"
+        tools:targetApi="31">
+        <activity
+            android:name=".Cuestionario15Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado15Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario14Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado14Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario13Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado13Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario12Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado12Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario11Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado11Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario10Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado10Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario9Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado9Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario8Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado8Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario7Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado7Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Completado2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".CompletadoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario6Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Cuestionario2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".CuestionarioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditPerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InicioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/splashtheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
