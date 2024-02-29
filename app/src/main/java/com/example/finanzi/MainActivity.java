@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 mTextViewRespuesta.setText(e.getMessage());
+                mTextViewRespuesta.setVisibility(View.VISIBLE);
             }
         }
     }

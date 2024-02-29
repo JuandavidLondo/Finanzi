@@ -134,12 +134,19 @@ public class InicioActivity extends AppCompatActivity {
     }
 
     public void ircuestionario1() {
-        Intent intent = new Intent(InicioActivity.this,CuestionarioActivity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if (vidas >= 0){
+            Intent intent = new Intent(InicioActivity.this,CuestionarioActivity.class);
+            intent.putExtra(LlaveVida,vidas);
+            intent.putExtra(LLaveDinero,monedas);
+            startActivity(intent);
+        }else{
+            showDialogSinV();
+        }
 
     }
+
+
+
     public void ircuestionario2() {
         Intent intent = new Intent(InicioActivity.this,Cuestionario2Activity.class);
         intent.putExtra(LlaveVida,vidas);
@@ -296,6 +303,24 @@ public class InicioActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.menu5);
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+        Button = dialog.findViewById(R.id.button2);
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.hide();
+            }
+        });
+    }
+
+    private void showDialogSinV() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.menu6);
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

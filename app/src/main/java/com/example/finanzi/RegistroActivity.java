@@ -13,6 +13,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.view.View.OnClickListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -57,6 +58,7 @@ public class RegistroActivity extends AppCompatActivity {
         mterminos = findViewById(R.id.btnTerminos);
 
         mbtnregistrar.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 nombre = mnonbres.getText().toString().trim();
