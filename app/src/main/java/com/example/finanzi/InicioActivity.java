@@ -134,122 +134,181 @@ public class InicioActivity extends AppCompatActivity {
     }
 
     public void ircuestionario1() {
+        if (vidas > 0){
         Intent intent = new Intent(InicioActivity.this,CuestionarioActivity.class);
         intent.putExtra(LlaveVida,vidas);
         intent.putExtra(LLaveDinero,monedas);
         startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
 
     }
     public void ircuestionario2() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario2Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if(vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario2Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
 
     }
     public void ircuestionario3() {
+        if(vidas>0){
         Intent intent = new Intent(InicioActivity.this,Cuestionario3Activity.class);
         intent.putExtra(LlaveVida,vidas);
         intent.putExtra(LLaveDinero,monedas);
         startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
 
     }
     public void ircuestionario4() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario4Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if(vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario4Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
 
     }
     public void ircuestionario5() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario5Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if(vidas > 0){
+            Intent intent = new Intent(InicioActivity.this,Cuestionario5Activity.class);
+            intent.putExtra(LlaveVida,vidas);
+            intent.putExtra(LLaveDinero,monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
 
     }
     public void ircuestionario6() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario6Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-        finish();
+        if(vidas >0 ) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario6Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+        showDialogsinV();
+        }
     }
     public void ircuestionario7() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario7Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-        finish();
+        if(vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario7Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario8() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario8Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-        finish();
+        if (vidas > 0 ) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario8Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario9() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario9Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario9Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
 
     }
     public void ircuestionario10() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario10Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario10Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario11() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario11Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario11Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario12() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario12Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario12Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario13() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario13Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario13Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario14() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario14Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario14Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
 
     }
     public void ircuestionario15() {
-        Intent intent = new Intent(InicioActivity.this,Cuestionario15Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, Cuestionario15Activity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario16() {
-        Intent intent = new Intent(InicioActivity.this,CuestionarioActivity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, CuestionarioActivity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void ircuestionario17() {
-        Intent intent = new Intent(InicioActivity.this,CuestionarioActivity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
-
+        if (vidas > 0) {
+            Intent intent = new Intent(InicioActivity.this, CuestionarioActivity.class);
+            intent.putExtra(LlaveVida, vidas);
+            intent.putExtra(LLaveDinero, monedas);
+            startActivity(intent);
+        }else{
+            showDialogsinV();
+        }
     }
     public void Comprar1(){
         if (monedas<5){
@@ -296,6 +355,23 @@ public class InicioActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.menu5);
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+        Button = dialog.findViewById(R.id.button2);
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.hide();
+            }
+        });
+    }
+    private void showDialogsinV() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.menu6);
         dialog.show();
         dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));

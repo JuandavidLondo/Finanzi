@@ -265,6 +265,15 @@
             android:textStyle="bold"
             android:translationY="655dp"
             android:elevation="20dp"/>
+        <TextView
+            android:id="@+id/txtrespuestaR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="respuesta"
+            android:textColor="#7a7a7a"
+            android:translationY="660dp"
+            />
 
     </LinearLayout>
 
@@ -275,15 +284,7 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteY="44dp">
 
-        <TextView
-            android:id="@+id/txtrespuestaR"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="respuesta:"
-            android:textColor="#7a7a7a"
-            android:translationY="700dp"
-            android:visibility="invisible" />
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

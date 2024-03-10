@@ -30,7 +30,7 @@ import java.util.regex.Pattern;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static final int RC_SIGN_IN = 10;
+    private static final int RC_SIGN_IN = 1;
     GoogleSignInClient mGoogleSignInClient;
     FirebaseAuth mAuth;
     Button mSignInButtonGoogle;
@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 mTextViewRespuesta.setText(e.getMessage());
+                mTextViewRespuesta.setVisibility(View.VISIBLE);
             }
         }
     }

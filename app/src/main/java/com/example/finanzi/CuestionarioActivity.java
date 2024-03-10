@@ -16,6 +16,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,9 +24,10 @@ public class CuestionarioActivity extends AppCompatActivity {
 
     RadioButton rdOpc1, rdOpc2, rdOpc3;
     TextView txtNroPregunta, txtPregunta,txtvidas;
-    Button btnSiguiente, btnSalir,btnfinalizar,Button;
+    Button btnSiguiente, btnSalir,btnfinalizar,Button,compra;
     ImageView corazon,moneda,titulo;
     View vista;
+    RadioGroup grupo;
 
     TextView txtmonedas;
     public static final String LlaveVida="LLavevida";
@@ -46,6 +48,7 @@ public class CuestionarioActivity extends AppCompatActivity {
         rdOpc1 = (RadioButton) findViewById(R.id.rdBtnOpc1);
         rdOpc2 = (RadioButton) findViewById(R.id.rdBtnOpc2);
         rdOpc3 = (RadioButton) findViewById(R.id.rdBtnOpc3);
+        grupo = findViewById(R.id.radioGroup);
 
         txtNroPregunta = (TextView) findViewById(R.id.txtNroPregunta);
         txtPregunta = (TextView) findViewById(R.id.txtPregunta);
@@ -128,6 +131,10 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    rdOpc1.clearFocus();
+                    rdOpc2.clearFocus();
+                    rdOpc3.clearFocus();
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -135,7 +142,7 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc2.setBackgroundResource(R.drawable.opciones);
                     rdOpc3.setBackgroundResource(R.drawable.opciones);
                     if (vidas==0){
-                        perder();
+                        showDialogperdio();
                     }
                 }
             },2000);
@@ -169,6 +176,10 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    rdOpc1.clearFocus();
+                    rdOpc2.clearFocus();
+                    rdOpc3.clearFocus();
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -177,7 +188,7 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc3.setBackgroundResource(R.drawable.opciones);
 
                     if (vidas==0){
-                        perder();
+                        showDialogperdio();
                     }
                 }
             },2000);
@@ -217,6 +228,11 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
 
+                    rdOpc1.clearFocus();
+                    rdOpc2.clearFocus();
+                    rdOpc3.clearFocus();
+                    grupo.clearCheck();
+
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -227,7 +243,7 @@ public class CuestionarioActivity extends AppCompatActivity {
 
 
                     if (vidas==0){
-                        perder();
+                        showDialogperdio();
                     }
                 }
             },2000);
@@ -263,6 +279,10 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    rdOpc1.clearFocus();
+                    rdOpc2.clearFocus();
+                    rdOpc3.clearFocus();
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -270,7 +290,7 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc2.setBackgroundResource(R.drawable.opciones);
                     rdOpc3.setBackgroundResource(R.drawable.opciones);
                     if (vidas==0){
-                        perder();
+                        showDialogperdio();
                     }
                 }
             },2000);
@@ -303,6 +323,10 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    rdOpc1.clearFocus();
+                    rdOpc2.clearFocus();
+                    rdOpc3.clearFocus();
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -310,7 +334,7 @@ public class CuestionarioActivity extends AppCompatActivity {
                     rdOpc2.setBackgroundResource(R.drawable.opciones);
                     rdOpc3.setBackgroundResource(R.drawable.opciones);
                     if (vidas==0){
-                        perder();
+                        showDialogperdio();
                     }
                 }
             },2000);
@@ -334,7 +358,9 @@ public class CuestionarioActivity extends AppCompatActivity {
                 @Override
                 public void run() {
                     if (vidas==0){
-                        perder();
+                        showDialogperdio();
+                    }else{
+                        ircompletado1();
                     }
 
                     txtNroPregunta.setText("Nota obtenida: " + nota);
@@ -437,6 +463,23 @@ public class CuestionarioActivity extends AppCompatActivity {
         });
 
     }
+    private void showDialogSinM() {
+        final Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.menu4);
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+        Button = dialog.findViewById(R.id.button2);
+        Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.hide();
+            }
+        });
+    }
     private void showDialogperdio() {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -447,6 +490,21 @@ public class CuestionarioActivity extends AppCompatActivity {
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
         Button = dialog.findViewById(R.id.button2);
+        compra = dialog.findViewById(R.id.button3);
+        compra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (dinero >= 5) {
+                    dinero = dinero - 5;
+                    txtmonedas.setText(String.valueOf(dinero));
+                    vidas = vidas + 1;
+                    txtvidas.setText(String.valueOf(vidas));
+                    dialog.hide();
+                }else{
+                    showDialogSinM();
+                }
+            }
+        });
         Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

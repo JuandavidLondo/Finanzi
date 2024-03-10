@@ -16,6 +16,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +24,9 @@ public class Cuestionario5Activity extends AppCompatActivity {
 
     RadioButton rdOpc1, rdOpc2, rdOpc3;
     TextView txtNroPregunta, txtPregunta,txtvidas;
-    Button btnSiguiente, btnSalir,btnfinalizar,Button;
+    Button btnSiguiente, btnSalir,btnfinalizar,Button,compra;
     ImageView completado;
+    RadioGroup grupo;
 
     TextView txtmonedas;
     public static final String LlaveVida="LLavevida";
@@ -45,6 +47,7 @@ public class Cuestionario5Activity extends AppCompatActivity {
         rdOpc1 = (RadioButton) findViewById(R.id.rdBtnOpc1);
         rdOpc2 = (RadioButton) findViewById(R.id.rdBtnOpc2);
         rdOpc3 = (RadioButton) findViewById(R.id.rdBtnOpc3);
+        grupo = findViewById(R.id.radioGroup);
 
         txtNroPregunta = (TextView) findViewById(R.id.txtNroPregunta);
         txtPregunta = (TextView) findViewById(R.id.txtPregunta);
@@ -121,6 +124,7 @@ public class Cuestionario5Activity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -161,6 +165,7 @@ public class Cuestionario5Activity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -203,6 +208,7 @@ public class Cuestionario5Activity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -245,6 +251,7 @@ public class Cuestionario5Activity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -285,6 +292,7 @@ public class Cuestionario5Activity extends AppCompatActivity {
                     rdOpc1.setChecked(false);
                     rdOpc2.setChecked(false);
                     rdOpc3.setChecked(false);
+                    grupo.clearCheck();
                     rdOpc1.setBackgroundResource(R.drawable.white);
                     rdOpc2.setBackgroundResource(R.drawable.white);
                     rdOpc3.setBackgroundResource(R.drawable.white);
@@ -419,6 +427,15 @@ public class Cuestionario5Activity extends AppCompatActivity {
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
         Button = dialog.findViewById(R.id.button2);
+        compra = dialog.findViewById(R.id.button3);
+        compra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dinero = dinero - 5;
+                vidas = vidas + 1;
+                dialog.hide();
+            }
+        });
         Button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
