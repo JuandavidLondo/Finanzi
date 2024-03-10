@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "817685769178",
+    "project_id": "finanzipruebas",
+    "storage_bucket": "finanzipruebas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817685769178:android:531451454e98c1e212aee3",
+        "android_client_info": {
+          "package_name": "com.example.finanzi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817685769178-10uu025b9l0tdg4u0bnq7lhcs8aq2lua.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.finanzi",
+            "certificate_hash": "2fb4ee009f18f675e3d2b1f258738d9d87a29b73"
+          }
+        },
+        {
+          "client_id": "817685769178-n4uphblat1q0i62l3fn8nmsiqmtj944n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZ8dVOsWmtPdBiB6iKJ-8H5BjXcz1dK9s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "817685769178-n4uphblat1q0i62l3fn8nmsiqmtj944n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
