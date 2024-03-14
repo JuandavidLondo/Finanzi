@@ -71,42 +71,48 @@ public class RegistroActivity extends AppCompatActivity {
                     txtrespuestaR.setTextColor(Color.RED);
                     txtrespuestaR.setVisibility(View.VISIBLE);
                 }else if(!correo.isEmpty()&&!clave.isEmpty()&&!confirmarclave.isEmpty()&&!nombre.isEmpty()&&!apellido.isEmpty()){
-                    if(emailValido(correo)){
-                        if(clave.equals(confirmarclave)){
-                            if(confirmarclave.length()>6){
-                                if(mterminos.isChecked()) {
-                                    mAuth.createUserWithEmailAndPassword(correo, confirmarclave).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                        @Override
-                                        public void onComplete(@NonNull Task<AuthResult> task) {
-                                            if (task.isSuccessful()) {
-                                                txtrespuestaR.setText("Se crreo la cuenta correctamente");
-                                                txtrespuestaR.setTextColor(Color.BLUE);
-                                                txtrespuestaR.setVisibility(View.VISIBLE);
-                                                irMain();
-                                            } else {
-                                                txtrespuestaR.setText("La cuenta ya existe");
-                                                txtrespuestaR.setTextColor(Color.RED);
-                                                txtrespuestaR.setVisibility(View.VISIBLE);
+                    if(verificarNombre(nombre) && verificarNombre(apellido)){
+                        if(emailValido(correo)){
+                            if(clave.equals(confirmarclave)){
+                                if(confirmarclave.length()>6){
+                                    if(mterminos.isChecked()) {
+                                        mAuth.createUserWithEmailAndPassword(correo, confirmarclave).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                                if (task.isSuccessful()) {
+                                                    txtrespuestaR.setText("Se crreo la cuenta correctamente");
+                                                    txtrespuestaR.setTextColor(Color.BLUE);
+                                                    txtrespuestaR.setVisibility(View.VISIBLE);
+                                                    irMain();
+                                                } else {
+                                                    txtrespuestaR.setText("La cuenta ya existe");
+                                                    txtrespuestaR.setTextColor(Color.RED);
+                                                    txtrespuestaR.setVisibility(View.VISIBLE);
+                                                }
                                             }
-                                        }
-                                    });
+                                        });
+                                    }else{
+                                        txtrespuestaR.setText("No aceptaste los terminos y condiciones");
+                                        txtrespuestaR.setTextColor(Color.RED);
+                                        txtrespuestaR.setVisibility(View.VISIBLE);
+                                    }
                                 }else{
-                                    txtrespuestaR.setText("No aceptaste los terminos y condiciones");
+                                    txtrespuestaR.setText("Contraseña muy corta");
                                     txtrespuestaR.setTextColor(Color.RED);
                                     txtrespuestaR.setVisibility(View.VISIBLE);
                                 }
                             }else{
-                                txtrespuestaR.setText("Contraseña muy corta");
+                                txtrespuestaR.setText("Las contraseñas no coinciden");
                                 txtrespuestaR.setTextColor(Color.RED);
                                 txtrespuestaR.setVisibility(View.VISIBLE);
                             }
                         }else{
-                            txtrespuestaR.setText("Las contraseñas no coinciden");
+                            txtrespuestaR.setText("Ingrese un correo valido");
                             txtrespuestaR.setTextColor(Color.RED);
                             txtrespuestaR.setVisibility(View.VISIBLE);
                         }
                     }else{
-                        txtrespuestaR.setText("Ingrese un correo valido");
+                        txtrespuestaR.setText("El Nombre y apellido no pueden tener numeros ni caracteres especiales.");
                         txtrespuestaR.setTextColor(Color.RED);
                         txtrespuestaR.setVisibility(View.VISIBLE);
                     }
@@ -122,6 +128,17 @@ public class RegistroActivity extends AppCompatActivity {
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(correo);
         return matcher.matches();
+    }
+    public static boolean verificarNombre(String cadena) {
+        if (cadena == null || cadena.isEmpty()) {
+            return false;
+        }
+        for (char c : cadena.toCharArray()) {
+            if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
+                return false;
+            }
+        }
+        return true;
     }
     private void irMain() {
         Intent intent = new Intent(RegistroActivity.this,MainActivity.class);

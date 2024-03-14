@@ -85,28 +85,28 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Correo = mcorreo.getText().toString().trim();
                 Contraseña = mcontraseña.getText().toString().trim();
-                if(Correo.isEmpty()||Contraseña.isEmpty()){
+                if (Correo.isEmpty() || Contraseña.isEmpty()) {
                     mTextViewRespuesta.setText("Ingrese el correo y la contraseña");
                     mTextViewRespuesta.setTextColor(Color.RED);
                     mTextViewRespuesta.setVisibility(View.VISIBLE);
-                }else{
-                    if(emailValido(Correo)){
-                        mAuth.signInWithEmailAndPassword(Correo,Contraseña).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                } else {
+                    if (emailValido(Correo)) {
+                        mAuth.signInWithEmailAndPassword(Correo, Contraseña).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if(task.isSuccessful()){
+                                if (task.isSuccessful()) {
                                     mTextViewRespuesta.setText("Inicio Correcto");
                                     mTextViewRespuesta.setTextColor(Color.BLUE);
                                     mTextViewRespuesta.setVisibility(View.VISIBLE);
                                     irHome();
-                                }else{
+                                } else {
                                     mTextViewRespuesta.setText("Credenciales Incorrectas");
                                     mTextViewRespuesta.setTextColor(Color.RED);
                                     mTextViewRespuesta.setVisibility(View.VISIBLE);
                                 }
                             }
                         });
-                    }else{
+                    } else {
                         mTextViewRespuesta.setText("Correo no valido");
                         mTextViewRespuesta.setTextColor(Color.RED);
                         mTextViewRespuesta.setVisibility(View.VISIBLE);
@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    private boolean emailValido(String correo){
+    public boolean emailValido(String correo){
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(correo);
