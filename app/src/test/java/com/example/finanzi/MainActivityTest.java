@@ -10,9 +10,21 @@ import java.util.regex.Pattern;
 public class MainActivityTest {
     @Test
     public void testCorreoValido() {
+        //Arrange
         String correo = "juan@gmail.com";
+        //Act
         Boolean result = emailValido(correo);
+        //Assert
         assertEquals(true, result);
+    }
+    @Test
+    public void testCorreoref(){
+        //Arange
+        String correo = "juan@gmail.com";
+        //Act
+        Boolean result = MainActivity.emailValido(correo);
+        //Assert
+        assertEquals(true,result);
     }
     @Test
     public void testCorreoNoValido(){
