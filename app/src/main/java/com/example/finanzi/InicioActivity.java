@@ -134,18 +134,18 @@ public class InicioActivity extends AppCompatActivity {
     }
 
     public void ircuestionario1() {
-        if (vidas > 0){
-        Intent intent = new Intent(InicioActivity.this,CuestionarioActivity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if (verificarVidas(vidas)){
+            Intent intent = new Intent(InicioActivity.this,CuestionarioActivity.class);
+            intent.putExtra(LlaveVida,vidas);
+            intent.putExtra(LLaveDinero,monedas);
+            startActivity(intent);
         }else{
             showDialogsinV();
         }
 
     }
     public void ircuestionario2() {
-        if(vidas > 0) {
+        if(verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario2Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -156,18 +156,18 @@ public class InicioActivity extends AppCompatActivity {
 
     }
     public void ircuestionario3() {
-        if(vidas>0){
-        Intent intent = new Intent(InicioActivity.this,Cuestionario3Activity.class);
-        intent.putExtra(LlaveVida,vidas);
-        intent.putExtra(LLaveDinero,monedas);
-        startActivity(intent);
+        if(verificarVidas(vidas)){
+            Intent intent = new Intent(InicioActivity.this,Cuestionario3Activity.class);
+            intent.putExtra(LlaveVida,vidas);
+            intent.putExtra(LLaveDinero,monedas);
+            startActivity(intent);
         }else{
             showDialogsinV();
         }
 
     }
     public void ircuestionario4() {
-        if(vidas > 0) {
+        if(verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario4Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -178,7 +178,7 @@ public class InicioActivity extends AppCompatActivity {
 
     }
     public void ircuestionario5() {
-        if(vidas > 0){
+        if(verificarVidas(vidas)){
             Intent intent = new Intent(InicioActivity.this,Cuestionario5Activity.class);
             intent.putExtra(LlaveVida,vidas);
             intent.putExtra(LLaveDinero,monedas);
@@ -189,17 +189,17 @@ public class InicioActivity extends AppCompatActivity {
 
     }
     public void ircuestionario6() {
-        if(vidas >0 ) {
+        if(verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario6Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
             startActivity(intent);
         }else{
-        showDialogsinV();
+            showDialogsinV();
         }
     }
     public void ircuestionario7() {
-        if(vidas > 0) {
+        if(verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario7Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -209,7 +209,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario8() {
-        if (vidas > 0 ) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario8Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -219,7 +219,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario9() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario9Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -230,7 +230,7 @@ public class InicioActivity extends AppCompatActivity {
 
     }
     public void ircuestionario10() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario10Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -240,7 +240,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario11() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario11Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -250,7 +250,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario12() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario12Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -260,7 +260,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario13() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario13Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -270,7 +270,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario14() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario14Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -281,7 +281,7 @@ public class InicioActivity extends AppCompatActivity {
 
     }
     public void ircuestionario15() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, Cuestionario15Activity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -291,7 +291,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario16() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, CuestionarioActivity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -301,7 +301,7 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void ircuestionario17() {
-        if (vidas > 0) {
+        if (verificarVidas(vidas)) {
             Intent intent = new Intent(InicioActivity.this, CuestionarioActivity.class);
             intent.putExtra(LlaveVida, vidas);
             intent.putExtra(LLaveDinero, monedas);
@@ -311,9 +311,9 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void Comprar1(){
-        if (monedas<5){
+        if (verificar5Monedas(monedas)){
             showDialogSinM();
-        }else if(vidas == 3){
+        }else if(verificar3Vidas(vidas)){
             showDialogfullV();
         }else{
             vidas ++;
@@ -323,9 +323,9 @@ public class InicioActivity extends AppCompatActivity {
         }
     }
     public void Comprar3(){
-        if (monedas<12){
+        if (verificar12Monedas(monedas)){
             showDialogSinM();
-        }else if(vidas > 0){
+        }else if(verificarVidas(vidas)){
             showDialogfullV();
         }else{
             vidas +=3;
@@ -384,6 +384,35 @@ public class InicioActivity extends AppCompatActivity {
                 dialog.hide();
             }
         });
+    }
+
+    public static boolean verificarVidas(int vidas){
+        if (vidas > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public static boolean verificar3Vidas(int vidas){
+        if (vidas == 3){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public static boolean verificar5Monedas(int monedas){
+        if (monedas < 5){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public static boolean verificar12Monedas(int monedas){
+        if (monedas < 12){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     TextView mbtnCrear;
     private String Correo;
     private String Contraseña;
-
+    public static String mensaje;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_Finanzi);
@@ -85,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Correo = mcorreo.getText().toString().trim();
                 Contraseña = mcontraseña.getText().toString().trim();
-                if (Correo.isEmpty() || Contraseña.isEmpty()) {
-                    mTextViewRespuesta.setText("Ingrese el correo y la contraseña");
+                if (campoVacio(Correo) || campoVacio(Contraseña)) {
+                    mTextViewRespuesta.setText(mensaje);
                     mTextViewRespuesta.setTextColor(Color.RED);
                     mTextViewRespuesta.setVisibility(View.VISIBLE);
                 } else {
@@ -190,5 +190,12 @@ public class MainActivity extends AppCompatActivity {
         return matcher.matches();
     }
 
-
+    public static boolean campoVacio(String campo){
+        if(campo.isEmpty()){
+            mensaje += "Ingrese el correo y la contraseña";
+            return false;
+        }else {
+            return true;
+        }
+    }
 }

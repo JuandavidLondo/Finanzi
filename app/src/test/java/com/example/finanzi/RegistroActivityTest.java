@@ -9,96 +9,108 @@ import java.util.regex.Pattern;
 public class RegistroActivityTest {
     @Test
     public void testnombreValido() {
+        //Arange
         String nombre = "Juan";
-        boolean result = verificarString(nombre);
+        //Act
+        boolean result = RegistroActivity.verificarNombre(nombre);
+        //Assert
         assertEquals(true, result);
     }
     @Test
     public void testnombreInValido() {
+        //Arange
         String nombre = "(8";
-        boolean result = verificarString(nombre);
+        //Act
+        boolean result = RegistroActivity.verificarNombre(nombre);
+        //Assert
         assertEquals(false, result);
     }
     @Test
     public void testnombreOapellidoVacio(){
+        //Arange
         String nombre = "";
-        boolean result = nombre.isEmpty();
-        assertEquals(true,result);
+        //Act
+        boolean result = RegistroActivity.campoVacio(nombre);
+        //Assert
+        assertEquals(false,result);
     }
     @Test
     public void testapellidoValido() {
-        String nombre = "Cadavid Gaviria";
-        boolean result = verificarString(nombre);
+        //Arange
+        String apellido = "Cadavid Gaviria";
+        //Act
+        boolean result = RegistroActivity.verificarNombre(apellido);
+        //Assert
         assertEquals(true, result);
     }
     @Test
     public void testapellidoInValido() {
-        String nombre = "C@d@v1d";
-        boolean result = verificarString(nombre);
+        //Arange
+        String apellido = "C@d@v1d";
+        //Act
+        boolean result = RegistroActivity.verificarNombre(apellido);
+        //Assert
         assertEquals(false, result);
     }
     @Test
     public void testCorreoValido() {
+        //Arange
         String correo = "juan@gmail.com";
-        Boolean result = emailValido(correo);
+        //Act
+        Boolean result = RegistroActivity.emailValido(correo);
+        //Assert
         assertEquals(true, result);
     }
     @Test
     public void testCorreoInValido() {
+        //Arange
         String correo = "juangmail.com";
-        Boolean result = emailValido(correo);
+        //Act
+        Boolean result = RegistroActivity.emailValido(correo);
+        //Assert
         assertEquals(false, result);
     }
     @Test
     public void testCorreoVacio(){
+        //Arange
         String correo = "";
-        Boolean result = correo.isEmpty();
-        assertEquals(true,result);
+        //Act
+        Boolean result = RegistroActivity.campoVacio(correo);
+        //Assert
+        assertEquals(false,result);
     }
     @Test
     public void testcontraseñasCortas(){
+        //Arange
         String contraseña = "123456";
         String Ccontraseña = "123456";
-        boolean result;
-        if(contraseña.length() > 6 || Ccontraseña.length()>6){
-            result = false;
-        }else{
-            result = true;
-        }
-        assertEquals(true,result);
+        //Act
+        boolean result = RegistroActivity.verificarClaves(contraseña,Ccontraseña);
+        //Assert
+        assertEquals(false,result);
     }
     @Test
     public void testcontraseñasCorrectas(){
+        //Arange
         String contraseña = "1234567";
         String Ccontraseña = "1234567";
-        boolean result;
-        if(contraseña.length() > 6 || Ccontraseña.length()>6){
-            if(contraseña == Ccontraseña){
-                result =true;
-            }else{
-                result = false;
-            }
-        }else{
-            result = false;
-        }
+        //Act
+        boolean result = RegistroActivity.verificarClaves(contraseña,Ccontraseña);
+        //Assert
         assertEquals(true,result);
     }
-
-    public static boolean verificarString(String cadena) {
-        if (cadena == null || cadena.isEmpty()) {
-            return false;
-        }
-        for (char c : cadena.toCharArray()) {
-            if (!Character.isLetter(c) && !Character.isWhitespace(c)) {
-                return false;
-            }
-        }
-        return true;
+    @Test
+    public void testcontraseñasdistintas(){
+        //Arange
+        String contraseña = "1234567";
+        String Ccontraseña = "123456";
+        //Act
+        boolean result = RegistroActivity.verificarClaves(contraseña,Ccontraseña);
+        //Assert
+        assertEquals(false,result);
     }
-    public boolean emailValido(String correo){
-        String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-        Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher(correo);
-        return matcher.matches();
+    @Test
+    public void testcontraseñasdistintasdoble(){
+        assertFalse(RegistroActivity.verificarClaves("12345678","1234567"));
     }
 }

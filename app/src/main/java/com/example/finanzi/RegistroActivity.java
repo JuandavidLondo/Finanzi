@@ -40,7 +40,7 @@ public class RegistroActivity extends AppCompatActivity {
     FirebaseFirestore firestore;
     RadioButton mterminos;
     private String correo,clave,confirmarclave,nombre,apellido;
-
+    public static String mensaje;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,72 +65,47 @@ public class RegistroActivity extends AppCompatActivity {
                 clave = meditcontraseñaR.getText().toString().trim();
                 confirmarclave = meditCcontraseñaR.getText().toString().trim();
 
-                if(correo.isEmpty()||clave.isEmpty()||confirmarclave.isEmpty()||nombre.isEmpty()||apellido.isEmpty()){
-                    txtrespuestaR.setText("Ingrese los datos solicitados");
+                if((campoVacio(correo)||campoVacio(clave)||campoVacio(confirmarclave)||campoVacio(nombre)
+                        ||campoVacio(apellido))&& (verificarNombre(nombre) && verificarNombre(apellido))
+                        && emailValido(correo) && verificarClaves(clave,confirmarclave) && verificarTerminos(mterminos)){
+                    txtrespuestaR.setText(mensaje);
                     Toast.makeText(RegistroActivity.this, "Ingrese los datos solicitados", Toast.LENGTH_SHORT).show();
                     txtrespuestaR.setTextColor(Color.RED);
                     txtrespuestaR.setVisibility(View.VISIBLE);
                 }else if(!correo.isEmpty()&&!clave.isEmpty()&&!confirmarclave.isEmpty()&&!nombre.isEmpty()&&!apellido.isEmpty()){
-                    if(verificarNombre(nombre) && verificarNombre(apellido)){
-                        if(emailValido(correo)){
-                            if(clave.equals(confirmarclave)){
-                                if(confirmarclave.length()>6){
-                                    if(mterminos.isChecked()) {
-                                        mAuth.createUserWithEmailAndPassword(correo, confirmarclave).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                                if (task.isSuccessful()) {
-                                                    txtrespuestaR.setText("Se crreo la cuenta correctamente");
-                                                    txtrespuestaR.setTextColor(Color.BLUE);
-                                                    txtrespuestaR.setVisibility(View.VISIBLE);
-                                                    irMain();
-                                                } else {
-                                                    txtrespuestaR.setText("La cuenta ya existe");
-                                                    txtrespuestaR.setTextColor(Color.RED);
-                                                    txtrespuestaR.setVisibility(View.VISIBLE);
-                                                }
-                                            }
-                                        });
-                                    }else{
-                                        txtrespuestaR.setText("No aceptaste los terminos y condiciones");
-                                        txtrespuestaR.setTextColor(Color.RED);
-                                        txtrespuestaR.setVisibility(View.VISIBLE);
-                                    }
-                                }else{
-                                    txtrespuestaR.setText("Contraseña muy corta");
-                                    txtrespuestaR.setTextColor(Color.RED);
-                                    txtrespuestaR.setVisibility(View.VISIBLE);
-                                }
-                            }else{
-                                txtrespuestaR.setText("Las contraseñas no coinciden");
+                    mAuth.createUserWithEmailAndPassword(correo, confirmarclave).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                txtrespuestaR.setText("Se crreo la cuenta correctamente");
+                                txtrespuestaR.setTextColor(Color.BLUE);
+                                txtrespuestaR.setVisibility(View.VISIBLE);
+                                irMain();
+                            } else {
+                                txtrespuestaR.setText("La cuenta ya existe");
                                 txtrespuestaR.setTextColor(Color.RED);
                                 txtrespuestaR.setVisibility(View.VISIBLE);
                             }
-                        }else{
-                            txtrespuestaR.setText("Ingrese un correo valido");
-                            txtrespuestaR.setTextColor(Color.RED);
-                            txtrespuestaR.setVisibility(View.VISIBLE);
                         }
-                    }else{
-                        txtrespuestaR.setText("El Nombre y apellido no pueden tener numeros ni caracteres especiales.");
-                        txtrespuestaR.setTextColor(Color.RED);
-                        txtrespuestaR.setVisibility(View.VISIBLE);
-                    }
+                    });
                 }
             }
         });
-
     }
 
 
-    private boolean emailValido(String correo){
+    public static boolean emailValido(String correo){
         String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
         Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(correo);
+        if(!matcher.matches()){
+            mensaje += " Ingrese un correo valido";
+        }
         return matcher.matches();
     }
     public static boolean verificarNombre(String cadena) {
         if (cadena == null || cadena.isEmpty()) {
+            mensaje += " El Nombre y apellido no pueden tener numeros ni caracteres especiales.";
             return false;
         }
         for (char c : cadena.toCharArray()) {
@@ -144,5 +119,34 @@ public class RegistroActivity extends AppCompatActivity {
         Intent intent = new Intent(RegistroActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
+    }
+    public static boolean campoVacio(String campo){
+        if(campo.isEmpty()){
+            mensaje += " Ingrese el correo y la contraseña";
+            return false;
+        }else {
+            return true;
+        }
+    }
+    public static boolean verificarClaves(String contra,String verfiContra){
+        if(contra.equals(verfiContra)){
+            if(contra.length()>6){
+                return true;
+            }else{
+                mensaje += " Contraseñas muy cortas";
+                return false;
+            }
+        }else {
+            mensaje += " Las contraseñas no coinciden";
+            return false;
+        }
+    }
+    public boolean verificarTerminos(RadioButton radio){
+        if(radio.isChecked()){
+            return true;
+        }else{
+            mensaje += " No aceptaste los terminos y condiciones";
+            return false;
+        }
     }
 }
